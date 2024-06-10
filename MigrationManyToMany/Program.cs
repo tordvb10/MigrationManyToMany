@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using MigrationManyToMany.Data;
+using MigrationManyToMany.Interfaces;
+using MigrationManyToMany.Repository;
 
 namespace MigrationManyToMany
 {
@@ -16,6 +18,9 @@ namespace MigrationManyToMany
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddControllers();
+
+            builder.Services.AddScoped<IParentRepository, ParentRepository>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
