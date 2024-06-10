@@ -1,0 +1,6 @@
+@MigrationManyToMany_HostAddress = http://localhost:5046
+
+GET {{MigrationManyToMany_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
